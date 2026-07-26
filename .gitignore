@@ -1,0 +1,10 @@
+# macOS が勝手に作るファイル
+.DS_Store
+
+# エディタ / ツールの設定
+.claude/
+.vscode/
+
+# 元のアイコン素材（assets/icons/ に最適化済みを配置）
+link_icons/
+subscription_icons/

@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>164 OFFICIAL WEB SITE</title>
+<meta name="description" content="作曲家 / ギタリスト / ボーカロイドプロデューサー 164（イチロクヨン）オフィシャルサイト。">
+
+<!-- SNSでシェアされたときの表示設定 -->
+<meta property="og:title" content="164 OFFICIAL WEB SITE">
+<meta property="og:description" content="作曲家 / ギタリスト / ボーカロイドプロデューサー 164（イチロクヨン）オフィシャルサイト。">
+<meta property="og:type" content="website">
+<meta property="og:image" content="assets/logo.png">
+
+<link rel="icon" href="assets/logo.png">
+
+<!-- Webフォント（見出し用の英字＋日本語） -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Oswald:wght@400;500;600;700&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<!-- ============ ヘッダー（上に固定されるメニュー） ============ -->
+<header class="header" id="header">
+  <div class="header__inner">
+    <a href="#top" class="header__brand">
+      <img src="assets/logo-mark.png" alt="164" class="logo-img" onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'logo-fallback',textContent:'164'}))">
+    </a>
+
+    <button class="nav-toggle" id="navToggle" aria-label="メニューを開く" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+
+    <nav class="nav" id="nav">
+      <a href="#news"      class="nav__link">NEWS</a>
+      <a href="#songs"     class="nav__link">SONGS</a>
+      <a href="#resources" class="nav__link">RESOURCES</a>
+      <a href="#about"     class="nav__link">ABOUT</a>
+      <a href="#contact"   class="nav__link">CONTACT</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+<!-- ============ トップ（ヒーロー） ============ -->
+<section class="hero" id="top">
+  <div class="hero__bg" aria-hidden="true"></div>
+  <div class="hero__inner">
+    <img src="assets/logo-mark.png" alt="164" class="hero__logo" onerror="this.replaceWith(Object.assign(document.createElement('div'),{className:'hero__logo-fallback',textContent:'164'}))">
+    <p class="hero__role">COMPOSER &nbsp;/&nbsp; GUITARIST &nbsp;/&nbsp; VOCALOID PRODUCER</p>
+
+    <!-- SNSリンク（アイコンは assets/icons/ 内。差し替えたい時はここのパスを変更） -->
+    <nav class="hero__links" aria-label="SNSリンク">
+      <a class="hero__link" href="https://www.youtube.com/user/164203" target="_blank" rel="noopener" aria-label="YouTube">
+        <img src="assets/icons/youtube.png" alt="YouTube">
+      </a>
+      <a class="hero__link" href="https://x.com/164203" target="_blank" rel="noopener" aria-label="X">
+        <img src="assets/icons/x.png" alt="X">
+      </a>
+      <a class="hero__link" href="http://www.nicovideo.jp/mylist/3304983" target="_blank" rel="noopener" aria-label="ニコニコ動画">
+        <img src="assets/icons/niconico.png" alt="ニコニコ動画">
+      </a>
+      <a class="hero__link" href="https://line.me/ti/p/@nct4046l" target="_blank" rel="noopener" aria-label="公式LINE">
+        <img src="assets/icons/line.png" alt="公式LINE">
+      </a>
+    </nav>
+  </div>
+  <a href="#news" class="hero__scroll" aria-label="下へスクロール">
+    <span class="hero__scroll-text">SCROLL</span>
+    <span class="hero__scroll-line"></span>
+  </a>
+</section>
+
+<!-- ============ NEWS ============ -->
+<section class="section" id="news">
+  <div class="container">
+    <h2 class="section__title" data-num="01">News<span class="section__title-ja">お知らせ</span></h2>
+
+    <div class="filters" id="newsFilters">
+      <button class="filter is-active" data-filter="ALL">ALL</button>
+      <button class="filter" data-filter="LIVE">LIVE</button>
+      <button class="filter" data-filter="RELEASE">RELEASE</button>
+      <button class="filter" data-filter="MEDIA">MEDIA</button>
+      <button class="filter" data-filter="INFO">INFO</button>
+    </div>
+
+    <div class="news-list" id="newsList">
+      <p class="loading">読み込み中…</p>
+    </div>
+
+    <div class="more-wrap">
+      <button class="btn-more" id="newsMore">VIEW MORE</button>
+    </div>
+  </div>
+</section>
+
+<!-- ============ VOCALOID SONGS ============ -->
+<section class="section section--alt" id="songs">
+  <div class="container">
+    <h2 class="section__title" data-num="02">VOCALOID Songs<span class="section__title-ja">作品一覧</span></h2>
+    <div class="song-grid" id="songGrid">
+      <p class="loading">読み込み中…</p>
+    </div>
+
+    <!-- 配信サービスへのリンク -->
+    <nav class="subs" aria-label="配信サービス">
+      <a class="subs__link" href="https://open.spotify.com/artist/4q1k4Y6SroqGJopNP90hYQ" target="_blank" rel="noopener">
+        <img src="assets/icons/spotify.png" alt="">
+        <span>Spotify</span>
+      </a>
+      <a class="subs__link" href="https://music.apple.com/jp/artist/164/341594606" target="_blank" rel="noopener">
+        <img src="assets/icons/apple-music.png" alt="">
+        <span>Apple Music</span>
+      </a>
+      <a class="subs__link" href="https://music.youtube.com/channel/UChFmH8dTXNPYCY3XeF9xtSA" target="_blank" rel="noopener">
+        <img src="assets/icons/youtube-music.png" alt="">
+        <span>YouTube Music</span>
+      </a>
+      <a class="subs__link" href="https://music.amazon.co.jp/artists/B00813GXRM/164" target="_blank" rel="noopener">
+        <img src="assets/icons/amazon-music.png" alt="">
+        <span>Amazon Music</span>
+      </a>
+    </nav>
+  </div>
+</section>
+
+<!-- ============ RESOURCES ============ -->
+<section class="section" id="resources">
+  <div class="container">
+    <h2 class="section__title" data-num="03">Resources<span class="section__title-ja">配布音源・ガイドライン</span></h2>
+
+    <div class="acc-list">
+
+      <details class="acc">
+        <summary class="acc__head">
+          <span class="acc__label">INSTRUMENTALS</span>
+          <span class="acc__note">インスト音源の配布</span>
+        </summary>
+        <div class="acc__body">
+          <div id="instList">
+            <p class="loading">読み込み中…</p>
+          </div>
+        </div>
+      </details>
+
+      <details class="acc">
+        <summary class="acc__head">
+          <span class="acc__label">GUIDELINE</span>
+          <span class="acc__note">楽曲・音源の利用について</span>
+        </summary>
+        <div class="acc__body">
+          <h3 class="acc__subhead">楽曲・音源の利用について</h3>
+          <p>164の楽曲について、個人による「歌ってみた」「演奏してみた」などの二次創作をインターネット上で公開する場合、歌詞および公開されているインスト音源をご利用いただけます。上記の範囲内でのご利用について、個別の許諾申請は必要ありません。</p>
+          <p>YouTube、ニコニコ動画等の動画・配信プラットフォームにおける収益化についても問題ございません。本ガイドラインでは、これらプラットフォーム上での通常の収益化は商用利用には含みません。</p>
+
+          <h3 class="acc__subhead">著作権に関する通知について</h3>
+          <p>インスト音源を使用した動画をYouTube等の動画投稿サービスへ公開した際、プラットフォームから「著作権に関する申し立て」等の通知が届く場合があります。これは、動画内に164の管理楽曲・音源が含まれていることをシステムが検出したことによるもので、本ガイドラインに基づく利用許諾が無効になるものではありません。</p>
+          <p>原則として、動画を削除・非公開にしていただく必要はありません。なお、対象となる動画には権利管理に伴う広告が表示される場合があります。あらかじめご了承ください。</p>
+
+          <h3 class="acc__subhead">商用利用について</h3>
+          <p>商品の販売、有料コンテンツへの収録、企業・法人による利用など、上記のプラットフォーム収益化を除く商用利用をご希望の場合は、以下のガイドラインをご確認ください。</p>
+          <p>
+            <a class="acc__link" href="https://exittunes.com/guideline/" target="_blank" rel="noopener">商用利用に関するガイドライン ↗</a>
+          </p>
+        </div>
+      </details>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============ ABOUT ============ -->
+<section class="section section--alt" id="about">
+  <div class="container">
+    <h2 class="section__title" data-num="04">About<span class="section__title-ja">プロフィール</span></h2>
+
+    <div class="about">
+      <div class="about__side">
+        <!-- 画像が無い場合は枠ごと消えるので、レイアウトは崩れません -->
+        <figure class="about__photo">
+          <img src="assets/bio.jpg" alt="164" loading="lazy"
+               onerror="this.closest('.about__photo').remove()">
+        </figure>
+
+        <p class="about__role">Composer / Guitarist</p>
+        <dl class="about__data">
+          <div class="about__row">
+            <dt>NAME</dt>
+            <dd>164（イチロクヨン）</dd>
+          </div>
+          <div class="about__row">
+            <dt>BIRTHDAY</dt>
+            <dd>3月10日</dd>
+          </div>
+          <div class="about__row">
+            <dt>BLOOD TYPE</dt>
+            <dd>A型</dd>
+          </div>
+        </dl>
+      </div>
+
+      <div class="about__text">
+        <p>山口県出身。作曲家 / ギタリスト / ボーカロイドプロデューサー。</p>
+        <p>2008年「shiningray」で活動を開始。2011年に発表した「天ノ弱」をはじめ、ロックを基軸とした数多くの楽曲を発表してきた。</p>
+        <p>自身の作品制作に加え、様々なアーティストやゲーム・映像作品への楽曲提供、作詞、作曲、編曲、ギター演奏など、その活動は多岐にわたる。</p>
+        <p>メロディとギターサウンドを核に、ジャンルやフォーマットを越えて作品を作り続けている。</p>
+        <p>これまでに7枚のメジャーアルバムをリリース。国内外のライブイベントにも多数出演。</p>
+        <p><strong>大のレスポールマニア。</strong></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CONTACT ============ -->
+<section class="section" id="contact">
+  <div class="container">
+    <h2 class="section__title" data-num="05">Contact<span class="section__title-ja">お問い合わせ</span></h2>
+
+    <div class="contact">
+      <p class="contact__lead">楽曲提供 / 作詞・作曲・編曲 / ライブ出演・ギター演奏 / その他ご依頼</p>
+      <p class="contact__lead2">各種お問い合わせはこちらから</p>
+
+      <!-- お問い合わせフォーム
+           送信先の設定は js/main.js の FORM_ENDPOINT を書き換えてください。
+           メールアドレスはHTMLに一切書きません（迷惑メール対策）。 -->
+      <form class="cform" id="contactForm" novalidate>
+        <div class="cform__row">
+          <label class="cform__label" for="cfName">お名前 <span class="cform__req">*</span></label>
+          <input class="cform__input" type="text" id="cfName" name="name" required autocomplete="name">
+        </div>
+
+        <div class="cform__row">
+          <label class="cform__label" for="cfEmail">メールアドレス <span class="cform__req">*</span></label>
+          <input class="cform__input" type="email" id="cfEmail" name="email" required autocomplete="email">
+        </div>
+
+        <div class="cform__row">
+          <label class="cform__label" for="cfSubject">ご用件</label>
+          <select class="cform__input" id="cfSubject" name="subject">
+            <option>楽曲提供</option>
+            <option>作詞・作曲・編曲</option>
+            <option>ライブ出演・ギター演奏</option>
+            <option>楽曲の利用について</option>
+            <option>その他ご依頼</option>
+          </select>
+        </div>
+
+        <div class="cform__row">
+          <label class="cform__label" for="cfMessage">お問い合わせ内容 <span class="cform__req">*</span></label>
+          <textarea class="cform__input cform__textarea" id="cfMessage" name="message" rows="7" required></textarea>
+        </div>
+
+        <!-- 自動投稿対策の隠しフィールド（人間には見えないので空のまま送られる） -->
+        <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" aria-hidden="true" class="cform__trap">
+
+        <div class="cform__foot">
+          <button class="cform__submit" type="submit">SEND</button>
+          <p class="cform__status" id="cformStatus" role="status" aria-live="polite"></p>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ============ フッター ============ -->
+<footer class="footer">
+  <div class="container footer__inner">
+    <p class="footer__copy">&copy; 164 ALL RIGHTS RESERVED.</p>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>
