@@ -388,8 +388,7 @@ section[id] { scroll-margin-top: var(--header-h); }
   background: rgba(var(--accent-rgb),.08);
 }
 .news-item__cat[data-cat="RELEASE"] { color: #f0f0f2; border-color: #55555f; }
-.news-item__cat[data-cat="MEDIA"]   { color: #9a9aa4; border-color: #3a3a42; }
-.news-item__cat[data-cat="INFO"]    { color: #70707a; border-color: #2e2e35; }
+.news-item__cat[data-cat="INFO"]    { color: #9a9aa4; border-color: #3a3a42; }
 
 .news-item__title {
   font-size: 14px;
