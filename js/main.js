@@ -13,7 +13,7 @@
 'use strict';
 
 /* 最初に表示する NEWS の件数（「VIEW MORE」を押すと全件表示） */
-const NEWS_INITIAL_COUNT = 5;
+const NEWS_INITIAL_COUNT = 6;
 
 
 /* ============================================================

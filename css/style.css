@@ -891,6 +891,17 @@ select.cform__input option { background: #16161a; color: var(--text); }
 @media (max-width: 720px) {
   .nav-toggle { display: block; }
 
+  /* ★重要★ backdrop-filter を指定した要素は、その内側の position: fixed の
+     「画面いっぱい」の基準を自分自身に変えてしまう（CSSの仕様）。
+     そのためヘッダーにぼかしを掛けたままだと、中にある全画面メニューが
+     ヘッダーの高さ(64px)に閉じ込められて表示が崩れる。
+     スマホではぼかしを使わず、背景色だけで表現する。 */
+  .header.is-scrolled {
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+    background: rgba(10,10,11,.96);
+  }
+
   /* メニューを全画面パネルに */
   .nav {
     position: fixed;
