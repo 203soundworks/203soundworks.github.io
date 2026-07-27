@@ -434,6 +434,32 @@ function initContactForm() {
    5. ヘッダー・メニュー・スクロール演出
    ============================================================ */
 
+/* ヘッダー左上のロゴの出し入れ。
+   トップのおおきな164ロゴが画面から出たら表示し、戻ってきたら隠す。
+   （ロゴ同士が同時に見えて重複するのを避けるため） */
+function initHeaderBrand() {
+  const header = document.getElementById('header');
+  const target = document.querySelector('.hero__logo, .hero__logo-fallback')
+              || document.querySelector('.hero__inner');
+  if (!header || !target) return;
+
+  // 対応していないブラウザでは、隠れっぱなしを避けて常に表示しておく
+  if (!('IntersectionObserver' in window)) {
+    header.classList.add('is-brand-visible');
+    return;
+  }
+
+  /* 上端はヘッダーの高さぶん内側で判定する。
+     ロゴがヘッダーの裏に潜り込んだ時点で「見えなくなった」と扱うため。 */
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      header.classList.toggle('is-brand-visible', !entry.isIntersecting);
+    });
+  }, { rootMargin: `-${header.offsetHeight}px 0px 0px 0px` });
+
+  observer.observe(target);
+}
+
 /* 少しスクロールしたらヘッダーに背景を付ける */
 function initHeader() {
   const header = document.getElementById('header');
@@ -516,6 +542,7 @@ function initReveal() {
    ============================================================ */
 document.addEventListener('DOMContentLoaded', () => {
   initHeader();
+  initHeaderBrand();
   initNavToggle();
   initScrollSpy();
   initReveal();

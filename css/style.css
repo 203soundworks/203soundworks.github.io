@@ -95,7 +95,23 @@ section[id] { scroll-margin-top: var(--header-h); }
   justify-content: space-between;
 }
 
-.header__brand { display: flex; align-items: center; }
+/* ヘッダー左上のロゴ。
+   トップのおおきな164ロゴが見えている間は隠し、
+   スクロールしてロゴが画面から出たらフェードで現れる。
+   （表示の切り替えは js/main.js が .is-brand-visible を付け外しして行う） */
+.header__brand {
+  display: flex;
+  align-items: center;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-6px);
+  transition: opacity .35s ease, transform .35s ease, visibility .35s ease;
+}
+.header.is-brand-visible .header__brand {
+  opacity: 1;
+  visibility: visible;
+  transform: none;
+}
 
 /* ページ内では背景を透過させた logo-mark.png を使う
    （黒背景のままだと、サイトの背景との境目が四角く見えてしまうため） */
