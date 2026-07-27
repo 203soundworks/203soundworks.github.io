@@ -434,6 +434,15 @@ function initContactForm() {
    5. ヘッダー・メニュー・スクロール演出
    ============================================================ */
 
+/* フッターの著作権表示の年を、その年に自動更新する。
+   「© 2008–2026 203soundworks」の 2026 の部分だけを書き換える。
+   ★毎年の手作業は不要です。 */
+function initFooterYear() {
+  const el = document.getElementById('footerYear');
+  if (!el) return;
+  el.textContent = new Date().getFullYear();
+}
+
 /* ヘッダー左上のロゴの出し入れ。
    トップのおおきな164ロゴが画面から出たら表示し、戻ってきたら隠す。
    （ロゴ同士が同時に見えて重複するのを避けるため） */
@@ -543,6 +552,7 @@ function initReveal() {
 document.addEventListener('DOMContentLoaded', () => {
   initHeader();
   initHeaderBrand();
+  initFooterYear();
   initNavToggle();
   initScrollSpy();
   initReveal();
