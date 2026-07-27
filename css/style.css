@@ -190,21 +190,12 @@ section[id] { scroll-margin-top: var(--header-h); }
   line-height: 1;
   letter-spacing: 0;
 }
-.hero__role {
-  margin: 26px 0 0;
-  font-family: var(--font-en);
-  font-size: clamp(10px, 2.4vw, 13px);
-  font-weight: 400;
-  letter-spacing: .3em;
-  color: var(--muted);
-}
-
 /* --- トップのSNSアイコン --- */
 .hero__links {
   display: flex;
   justify-content: center;
   gap: 28px;
-  margin-top: 36px;
+  margin-top: 46px;   /* 肩書きの行を無くしたぶん、ロゴとの間隔を広げてバランスを取る */
 }
 .hero__link {
   display: block;
