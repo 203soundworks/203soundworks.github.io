@@ -27,7 +27,12 @@
 <meta name="twitter:description" content="作曲家 / ギタリスト / ボーカロイドプロデューサー 164（イチロクヨン）オフィシャルサイト。">
 <meta name="twitter:image" content="https://203soundworks.com/assets/ogp.png">
 
-<link rel="icon" href="assets/logo.png">
+<!-- このページの正式なURL。別のURLで表示された場合でも検索エンジンがこちらを本家と判断する -->
+<link rel="canonical" href="https://203soundworks.com/">
+
+<!-- タブに出る小さいアイコン。48pxの専用画像を使う（大きい画像を縮小表示させると無駄な読み込みになるため） -->
+<link rel="icon" href="assets/favicon.png" sizes="48x48">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
 
 <!-- Webフォント（見出し用の英字＋日本語） -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -35,6 +40,30 @@
 <link href="https://fonts.googleapis.com/css2?family=Anton&family=Oswald:wght@400;500;600;700&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
 
 <link rel="stylesheet" href="css/style.css">
+
+<!-- 構造化データ：検索エンジンに「これは音楽アーティストのサイト」だと伝える。
+     画面上には何も表示されません。SNSアカウント等を sameAs で結びつけています。 -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "MusicGroup",
+  "name": "164",
+  "alternateName": "イチロクヨン",
+  "url": "https://203soundworks.com/",
+  "image": "https://203soundworks.com/assets/ogp.png",
+  "description": "作曲家 / ギタリスト / ボーカロイドプロデューサー 164（イチロクヨン）オフィシャルサイト。",
+  "genre": ["Rock", "VOCALOID"],
+  "sameAs": [
+    "https://www.youtube.com/user/164203",
+    "https://x.com/164203",
+    "http://www.nicovideo.jp/mylist/3304983",
+    "https://open.spotify.com/artist/4q1k4Y6SroqGJopNP90hYQ",
+    "https://music.apple.com/jp/artist/164/341594606",
+    "https://music.youtube.com/channel/UChFmH8dTXNPYCY3XeF9xtSA",
+    "https://music.amazon.co.jp/artists/B00813GXRM/164"
+  ]
+}
+</script>
 </head>
 <body>
 
@@ -65,7 +94,11 @@
 <section class="hero" id="top">
   <div class="hero__bg" aria-hidden="true"></div>
   <div class="hero__inner">
-    <img src="assets/logo-mark.png" alt="164" class="hero__logo" onerror="this.replaceWith(Object.assign(document.createElement('div'),{className:'hero__logo-fallback',textContent:'164'}))">
+    <!-- ページの主題を表す見出し(h1)。ロゴ画像のalt「164」が見出しの文字として扱われます。
+         見た目は画像のままで、検索エンジンには主題が伝わります。 -->
+    <h1 class="hero__title">
+      <img src="assets/logo-mark.png" alt="164" class="hero__logo" onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'hero__logo-fallback',textContent:'164'}))">
+    </h1>
 
     <!-- SNSリンク（アイコンは assets/icons/ 内。差し替えたい時はここのパスを変更） -->
     <nav class="hero__links" aria-label="SNSリンク">
