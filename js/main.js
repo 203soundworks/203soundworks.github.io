@@ -15,6 +15,10 @@
 /* 最初に表示する NEWS の件数（「VIEW MORE」を押すと全件表示） */
 const NEWS_INITIAL_COUNT = 6;
 
+/* 最初に表示する楽曲の件数。
+   12は 2列・3列・4列 のどの並びでも余りが出ない数（スマホ〜PCで見栄えが揃う） */
+const SONGS_INITIAL_COUNT = 12;
+
 
 /* ============================================================
    共通の小さな道具
@@ -309,16 +313,48 @@ function setupSongThumb(img) {
   if (img.complete && img.naturalWidth > 0) onLoad();   // 既に読み込み済みだった場合
 }
 
+const songsState = {
+  items: [],       // JSONから読み込んだ全曲
+  expanded: false  // 全件表示中かどうか
+};
+
+/* 楽曲一覧を描画する */
+function renderSongs() {
+  const gridEl = document.getElementById('songGrid');
+  const moreEl = document.getElementById('songsMore');
+
+  const visible = songsState.expanded
+    ? songsState.items
+    : songsState.items.slice(0, SONGS_INITIAL_COUNT);
+
+  gridEl.innerHTML = visible.map(buildSongCard).join('');
+  gridEl.querySelectorAll('.song-card__thumb img').forEach(setupSongThumb);
+
+  /* 残りがある時だけボタンを出す */
+  moreEl.hidden = songsState.items.length <= SONGS_INITIAL_COUNT;
+  moreEl.textContent = songsState.expanded ? 'CLOSE' : 'VIEW MORE';
+}
+
 async function initSongs() {
   const gridEl = document.getElementById('songGrid');
   try {
-    const songs = await loadJson('data/songs.json');
-    gridEl.innerHTML = songs.map(buildSongCard).join('');
-    gridEl.querySelectorAll('.song-card__thumb img').forEach(setupSongThumb);
+    songsState.items = await loadJson('data/songs.json');
+    renderSongs();
   } catch (err) {
     console.error(err);
     showDataError(gridEl, 'data/songs.json');
+    document.getElementById('songsMore').hidden = true;
+    return;
   }
+
+  /* もっと見る / 閉じる */
+  document.getElementById('songsMore').addEventListener('click', () => {
+    songsState.expanded = !songsState.expanded;
+    renderSongs();
+    if (!songsState.expanded) {
+      document.getElementById('songs').scrollIntoView({ behavior: 'smooth' });
+    }
+  });
 }
 
 
